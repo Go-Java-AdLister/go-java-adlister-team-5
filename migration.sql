@@ -1,3 +1,4 @@
+
 USE adlister_db;
 
 DROP TABLE IF EXISTS ads;
@@ -15,7 +16,12 @@ CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
+    park_name VARCHAR(150) NOT NULL,
     description TEXT NOT NULL,
+    elevation INT NOT NULL,
+    hike_distance INT NOT NULL,
+    max_occupancy INT NOT NULL,
+
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
