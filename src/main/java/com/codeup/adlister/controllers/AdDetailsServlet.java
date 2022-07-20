@@ -22,14 +22,34 @@ public class AdDetailsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = (User) request.getSession().getAttribute("user");
-        Ad ad = new Ad(
-                user.getId(),
-                request.getParameter("title"),
-                request.getParameter("description")
-        );
-        DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/ads");
-    }
+        String id = request.getParameter("id");
+        String user_id = request.getParameter("user_id");
+        String title = request.getParameter("title");
+        String park_name = request.getParameter("park_name");
+        String description = request.getParameter("description");
+        String elevation = request.getParameter("elevation");
+        String hike_distance = request.getParameter("hike_distance");
+        String max_occupancy = request.getParameter("max_occupancy");
+
+        if (id.isEmpty()
+        ||user_id.isEmpty()
+        ||title.isEmpty()
+        ||park_name.isEmpty()
+        ||description.isEmpty()
+        ||elevation.isEmpty()
+        ||hike_distance.isEmpty()
+        ||max_occupancy.isEmpty()){
+            response.sendRedirect("/details");
+
+        }
+
+        if (DaoFactory.getUsersDao().findByUsername(user_id) != null) {
+            request.getSession().setAttribute("error", "Username already exists");
+            response.sendRedirect("/details");
+        }else {
+            request.getSession().removeAttribute("error");
+            response.sendRedirect("/details");
+        }
+
     }
 }
