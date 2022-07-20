@@ -31,9 +31,7 @@ public class AdDetailsServlet extends HttpServlet {
         String hike_distance = request.getParameter("hike_distance");
         String max_occupancy = request.getParameter("max_occupancy");
 
-        if (id.isEmpty()
-        ||user_id.isEmpty()
-        ||title.isEmpty()
+        if (title.isEmpty()
         ||park_name.isEmpty()
         ||description.isEmpty()
         ||elevation.isEmpty()
