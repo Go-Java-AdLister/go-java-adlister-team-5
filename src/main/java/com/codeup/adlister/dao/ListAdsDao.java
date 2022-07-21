@@ -16,7 +16,7 @@ public class ListAdsDao implements Ads {
     }
 
     public Long insert(Ad ad) {
-        // make sure we have ads
+         make sure we have ads
         if (ads == null) {
             ads = generateAds();
         }

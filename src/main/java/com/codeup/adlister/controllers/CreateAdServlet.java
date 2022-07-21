@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static sun.security.pkcs11.wrapper.Functions.getId;
-
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,8 +26,8 @@ public class CreateAdServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
         Ad ad = new Ad(
-               user.getId(),
-               request.getParameter("title"),
+                user.getId(),
+                request.getParameter("title"),
                 request.getParameter("park_name"),
                 request.getParameter("description"),
                 request.getParameter("elevation"),

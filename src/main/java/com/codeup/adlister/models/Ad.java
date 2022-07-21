@@ -14,8 +14,21 @@ public class Ad {
 
     private int max_occupancy;
 
-    public Ad(long id, String title, String park_name, String description, int elevation, int hike_distance, int max_occupancy) {
+    public Ad(long id, long userId, String title, String description, String park_name, int elevation, int hike_distance, int max_occupancy) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.park_name = park_name;
+        this.elevation = elevation;
+        this.hike_distance = hike_distance;
+        this.max_occupancy = max_occupancy;
     }
+
+    public Ad(long id, String title, String park_name, String description, String elevation, String hike_distance, String max_occupancy) {
+
+    }
+
 
     public long getId() {
         return id;
@@ -81,15 +94,6 @@ public class Ad {
         this.max_occupancy = max_occupancy;
     }
 
-    public Ad(long id, long userId, String title, String description, String park_name, int elevation, int hike_distance, int max_occupancy) {
-        this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
-        this.park_name = park_name;
-        this.elevation = elevation;
-        this.hike_distance = hike_distance;
-        this.max_occupancy = max_occupancy;
-    }
+
 }
 
