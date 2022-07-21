@@ -7,10 +7,11 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
 
+
+                <li><a href="/ads">ADS</a></li>
+                <li><a href="/ads">Create Ads</a></li>
                 <li><a href="/profile">Profile</a></li>
                 <li><a href="/logout">Logout</a></li>
-
-
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
 
