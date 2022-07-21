@@ -19,6 +19,7 @@
 <%--<ul>--%>
 <%--    <c:forEach items="${ads}" var="">--%>
 <%--        <li><c:out value="${ads.}" /></li>--%>
+
 <%--    </c:forEach>--%>
 <%--</ul>--%>
 <form method="post">
