@@ -14,6 +14,9 @@ public class Ad {
 
     private int max_occupancy;
 
+    public Ad(long id, String title, String park_name, String description, int elevation, int hike_distance, int max_occupancy) {
+    }
+
     public long getId() {
         return id;
     }

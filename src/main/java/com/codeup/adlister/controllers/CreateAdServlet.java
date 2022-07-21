@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static sun.security.pkcs11.wrapper.Functions.getId;
+
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,15 +21,20 @@ public class CreateAdServlet extends HttpServlet {
             return;
         }
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
+                .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
+
         Ad ad = new Ad(
-            user.getId(),
-            request.getParameter("title"),
-            request.getParameter("description")
+               user.getId(),
+               request.getParameter("title"),
+                request.getParameter("park_name"),
+                request.getParameter("description"),
+                request.getParameter("elevation"),
+                request.getParameter("hike_distance"),
+                request.getParameter("max_occupancy")
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
