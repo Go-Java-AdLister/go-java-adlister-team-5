@@ -11,14 +11,16 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
+    <button>Click For More Details</button>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
+            <h2>${ad.park_name}</h2>
             <p>${ad.description}</p>
+            <form action="/ads" method="get">
+                <button>Click For More Details</button>
+            </form>
         </div>
     </c:forEach>
 </div>
-
 </body>
 </html>
