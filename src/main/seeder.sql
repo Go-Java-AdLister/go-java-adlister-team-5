@@ -2,7 +2,9 @@ USE adlister_db;
 
 INSERT INTO users (id, username, email, password)
 VALUES (1, 'bob', 'bob@123', 'hello'),
-( 2 , 'admin','lineishagibson@gmail.com','$2a$12$5uEPkAEW08T2x0dGnUJXDuL.zdQb7YnbpjcEt9vIycrqxfCHYoDEK');
+( 2 , 'admin','lineishagibson@gmail.com','$2a$12$5uEPkAEW08T2x0dGnUJXDuL.zdQb7YnbpjcEt9vIycrqxfCHYoDEK'),
+   ( 3,'jack','jack@email.com','$2a$12$lGma5xwVu9/aD8fu58TqY.Ha0GKdBUULqrEPd0FGeutzHbrEb552');
+
 
 
 INSERT INTO ads (id, user_id, title, park_name, description, elevation, hike_distance, max_occupancy)
