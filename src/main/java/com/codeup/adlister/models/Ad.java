@@ -1,6 +1,6 @@
 package com.codeup.adlister.models;
 
-public class Ad  {
+public class Ad {
     private long id;
     private long userId;
     private String title;
@@ -21,8 +21,25 @@ public class Ad  {
         this.max_occupancy = max_occupancy;
     }
 
-    public Ad(long id, String user_id, String title, String park_name, String description, String elevation, String hike_distance, String max_occupancy) {
+    public Ad(Long userId,  String title, String park_name, String description, String elevation, String hike_distance, String max_occupancy) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.park_name = park_name;
+        this.elevation = Integer.parseInt(elevation);
+        this.hike_distance = Integer.parseInt(hike_distance);
+        this.max_occupancy = Integer.parseInt(max_occupancy);
+    }
 
+
+    public Ad(long userId, String title, String description, String park_name, int elevation, int hike_distance, int max_occupancy) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.park_name = park_name;
+        this.elevation = elevation;
+        this.hike_distance = hike_distance;
+        this.max_occupancy = max_occupancy;
     }
 
     public long getId() {
