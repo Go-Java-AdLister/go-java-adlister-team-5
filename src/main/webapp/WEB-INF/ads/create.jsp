@@ -11,14 +11,18 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Create a new Ad</h1>
-    <form action="/ads/create" method="post">
+    <form action="${pageContext.request.contextPath}/ads/create" method="post">
+        <%--        <div class="form-group">--%>
+        <%--            <label for="user_id">User Id</label>--%>
+        <%--            <input id="user_id" name="user_id" class="form-control" type="text" >--%>
+        <%--        </div>--%>
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <input id="title" name="title" class="form-control" type="text" >
         </div>
         <div class="form-group">
             <label for="park_name">Park Name</label>
-            <input id="park_name" name="park_name" class="form-control" type="text">
+            <input id="park_name" name="park_name" class="form-control" type="text" >
         </div>
         <div class="form-group">
             <label for="description">Description</label>
