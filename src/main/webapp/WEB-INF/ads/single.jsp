@@ -12,8 +12,8 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
     <div class="col-md-6 justify-content-center">
-        <h1> Park Name: ${singleAd.park_name} </h1>
-        <h3> Description: ${singleAd.description}</h3>
+        <h1> Park Name: ${ads.park_name} </h1>
+        <h3> Description: ${ads.description}</h3>
     </div>
 </div>
 </body>

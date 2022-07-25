@@ -1,5 +1,7 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,13 +11,10 @@ import java.io.IOException;
 
 @WebServlet(name = "IndividualAdServlet", urlPatterns = "/ads/single")
 public class SingleAdServlet extends HttpServlet {
+    public SingleAdServlet() {
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        Long oneAd = Long.parseLong(request.getParameter("singleAd"));
-        request.getRequestDispatcher("/WEB-INF/ads/single.jsp").forward(request,response);
-
     }
 
 
