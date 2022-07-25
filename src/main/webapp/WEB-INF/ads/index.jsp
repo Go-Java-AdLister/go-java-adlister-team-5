@@ -16,7 +16,7 @@
         <div class="col-md-6">
             <h2>${ad.description}</h2>
             <p>${ad.park_name} </p>
-            <form action="${pageContext.request.contextPath}/ads/single" method="get">
+            <form action="${pageContext.request.contextPath}/details" method="get">
                 <button>Click For More Details</button>
             </form>
         </div>

@@ -9,17 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "IndividualAdServlet", urlPatterns = "/ads/single")
+@WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class SingleAdServlet extends HttpServlet {
-    public SingleAdServlet() {
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
-
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        request.getRequestDispatcher("/WEB-INF/ads/single.jsp").forward(request, response);
     }
 }
 
